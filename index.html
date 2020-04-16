@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head> 
+ <title>jQuery Codepress Plugin v1.2</title>
+ <link type="text/css" rel="stylesheet" href="/@/@.css"/>
+	<script src='jquery.js' type="text/javascript"></script>
+ <script src='jquery.form.js' type="text/javascript" language="javascript"></script>
+ <script src='jquery.MetaData.js' type="text/javascript" language="javascript"></script>
+ <script src='jquery.Codepress.js' type="text/javascript" language="javascript"></script>
+ <script language="javascript">
+//# PLUGIN INTEGRATION
+$(function(){
+ // default settings
+ $.codepress.config = {
+  path: '/fwx/inc/codepress/',
+  height: 140
+ };
+ // initialize
+ $('textarea.codepress').codepress();
+});
+ </script>
+ <script language="javascript">
+//# TEST PAGE FUNCTIONALITY
+$(function(){
+
+ // Ajax Submission
+ $('#btn-ajax').click(function(){
+  $('form#test').ajaxSubmit({
+   complete: function(r){
+    $('#ajax').html(r.responseText);
+   }
+  });
+ });
+ 
+ // Conventional Submission
+ $('#btn-conv').click(function(){
+  $('form#test').submit();
+ });
+ 
+});
+ </script>
+</head>
+<body>
+
+<div class="P5 RowA Small BB" style="position:fixed; top:0; left:0;">
+ <span style="float:right">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+ <input type="hidden" name="cmd" value="_s-xclick">
+ <input type="hidden" name="hosted_button_id" value="6856904">
+ <input type="image" src="https://www.paypal.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
+ <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+</form>
+ </span>
+ Collection of <strong>jQuery Rich-Text Editor Plugins</strong>:
+ <a href="../FCKEditor/">FCKEditor</a>, <a href="../Codepress/">Codepress</a>
+ |
+ Other <a href="../">jQuery plugins</a>:
+ <a href="../multiple-file-upload/">Multiple File Upload</a>,
+	<a href="../star-rating/">Star Rating</a>
+</div>
+<div class="Clear">&nbsp;</div><div class="Clear">&nbsp;</div><div class="Clear">&nbsp;</div>
+
+<table width="100%" cellspacing="0">
+ <tr>
+  <td valign="top" width="70">
+<script type="text/javascript">digg_url = 'http://www.fyneworks.com/jquery/Codepress/';</script>
+<script src="http://digg.com/tools/diggthis.js" type="text/javascript"></script>
+  </td>
+  <td valign="top" width="10">&nbsp;</td>
+  <td valign="top">
+   <div class="Clear Yes">If you like this, <strong>digg it</strong>!</div>
+
+<table width="100%">
+ <tr>
+  <td valign="top" width="auto">
+
+<h1><a href="./">jQuery Codepress Plugin v1.2</a></h1>
+<p>
+	Version: <strong class="Warning">1.2</strong>
+	|
+ <a href='jquery.Codepress.js'><strong>Download</strong></a>
+ |
+ <a href="http://plugins.jquery.com/project/Codepress">Official Project Page</a>
+ |
+ <a href="http://plugins.jquery.com/project/issues/Codepress">Report Bug</a>
+ |
+ By DMA, <a href="http://www.fyneworks.com/">Expert SEO</a>
+</p>
+<p>
+	Other links:
+ <a href="http://www.codepress.org/">Codepress Official Website</a>
+ |
+ <a href="http://www.malsup.com/jquery/form/">Form Plugin</a>
+ |
+	<a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/">Validation Plugin</a>
+ |
+ <a href="http://www.jquery.com/">jQuery Library</a>
+</p>
+<p class="Small B">
+	Previous versions:
+	<a href="/jquery/FCKEditor/1.10/">1.10</a>
+</p>
+
+			
+		<div class="Clear" style="margin:10px 0px; padding:3px 0px 7px 0px; background:#090; color:#fff; text-align:center;">
+		 <div class="Small" style="background:#090; color:#fff; padding:0 0 3px 0">
+			 To <span class="B">Support this project</span> just checkout a related website:
+			</div>
+		 <!--//
+			<a target="_blank" href="http://www.digixmas.com/?id=3313"><img src="http://www.digixmas.com/images/digi-banner-1.gif" alt="digiXMAS Directory Submitter"></a>
+			//-->
+			<script type="text/javascript">
+			google_ad_client = "pub-9465008056978568";
+			google_ad_width = 728;
+			google_ad_height = 90;
+			google_ad_format = "728x90_as";
+			google_ad_type = "text_image";
+			//2007-07-12: Fyneworks, jQuery, Banner
+			google_ad_channel = "0644126694+6785406728+8192505316";
+			</script>
+			<script type="text/javascript"
+					src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+		</div>
+
+
+<h2>What does it do?</h2>
+<ul>
+ <li>
+  This plugin makes it easy to install <a href="http://www.codepress.org/">Codepresss</a>
+  on your page <em>the jQuery way</em>.
+ </li>
+ <li>
+  It integrates <a href="http://www.codepress.org/">Codepresss</a> with the
+  <a href="http://www.malsup.com/jquery/form/">jQuery Form Plugin</a> and
+  <strong>enables the contents of Codepress to be submitted via ajax</strong>.
+ </li>
+	<li>
+	 Also works with the <a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/">Validation Plugin</a>
+	</li>
+</ul>
+
+<div class="Clear">&nbsp;</div>
+<div class="Clear">&nbsp;</div>
+<h2>Try it yourself</h2>
+<form name="test" id="test" action="test.asp" target="conv" method="post">
+ <textarea name="html" class="codepress" cols="50" rows="6" style="width:100%;">
+ Hello world, <strong>I'm bold...</strong> <span style="color:red;">...and I'm red!</span>
+ </textarea>
+ <table width="100%" cellspacing="0">
+  <tr>
+   <td valign="top">
+    <div class="Clear">
+     <input id="btn-conv" type="button" value="Test &raquo;" class="Right"/>
+     <h3>Conventional Submission (iFRAME)</h3>
+    </div>
+    <div class="Clear">
+     This type of submission always works without the plugin.
+    </div>
+    <iframe name="conv" id="conv" src="about:blank" style="border:#777 solid 1px; height:80px; width:100%; overflow:scroll;"></iframe>
+   </td>
+   <td valign="top" width="20">&nbsp;</td>
+   <td valign="top" width="">
+    <div class="Clear">
+     <input id="btn-ajax" type="button" value="Test &raquo;" class="Right"/>
+     <h3>Ajax Submission (DIV)</h3>
+    </div>
+    <div class="Clear">
+     This type of submission would not work without this plugin.
+    </div>
+    <div id="ajax" style="border:#777 solid 1px; height:80px; width:100%; overflow:scroll;"></div>
+    (Ajax Form submission powered by the <a href="http://www.malsup.com/jquery/form/">jQuery Form Plugin</a>)
+   </td>
+  </tr>
+ </table>
+</form>
+
+<div class="Clear">&nbsp;</div>
+<div class="Clear">&nbsp;</div>
+<h2>Download</h2>
+<p>
+ All you really need is <a href="http://www.codepress.org/">Codepress</a> (DUH!), <a href="http://www.jquery.com/">jQuery</a> (of course) and the <a href='jquery.Codepress.js'>jQuery Codepress Plugin</a>.
+</p>
+<p>
+ But if you want to submit your form via Ajax, then you 
+	need to get the <a href="http://www.malsup.com/jquery/form/">jQuery Form Plugin</a> by Malsup.
+</p>
+
+<div class="Clear">&nbsp;</div>
+<div class="Clear">&nbsp;</div>
+<h2>Usage</h2>
+<ul>
+ <li>
+  <u>Method 1</u>: replacing ALL textareas in a page with THE SAME settings
+  <br/>
+  <code><pre>
+&lt;textarea name="codepress1" cols="50" rows="6"&gt;&lt;/textarea&gt;
+&lt;textarea name="codepress2" cols="50" rows="6"&gt;&lt;/textarea&gt;
+&lt;textarea name="codepress3" cols="50" rows="6"&gt;&lt;/textarea&gt;
+&lt;script&gt;
+$(function(){
+ $('textarea').codepress({
+	 path: '/path/to/codepress/directory/'
+	});
+});
+&lt;/script&gt;
+  </pre></code>
+ </li>
+ <li>
+  <u>Method 2</u>: replacing SOME textareas in a page with THE SAME settings
+  <br/>
+  In this example, only textarea codepress3 will not be converted into a Codepress.
+  <br/>
+  <code><pre>
+<span style="color:#090">&lt;textarea name="codepress1" class="<strong>codepress</strong>" cols="50" rows="6"&gt;&lt;/textarea&gt;</span>
+<span style="color:#090">&lt;textarea name="codepress2" class="<strong>codepress</strong>" cols="50" rows="6"&gt;&lt;/textarea&gt;</span>
+<span style="color:#900">&lt;textarea name="codepress3" cols="50" rows="6"&gt;&lt;/textarea&gt;</span>
+&lt;script&gt;
+$(function(){
+ $('textarea.codepress').codepress({
+	 path: '/path/to/codepress/directory/'
+	});
+});
+&lt;/script&gt;
+  </pre></code>
+ </li>
+ <li>
+  <u>Method 3</u>: replacing SOME textareas in a page with DIFFERENT SETTINGS
+  <br/>
+  <code><pre>
+&lt;textarea name="<strong>codepress1</strong>" cols="50" rows="6"&gt;&lt;/textarea&gt;
+&lt;textarea name="<strong>codepress2</strong>" cols="50" rows="6"&gt;&lt;/textarea&gt;
+&lt;textarea name="<strong>codepress3</strong>" cols="50" rows="6"&gt;&lt;/textarea&gt;
+&lt;script&gt;
+ $(function(){
+  $.codepress.config = {path: '/path/to/codepress/directory/', height:300 };
+  $('textarea#codepress1').codepress(/* default settings */);
+  $('textarea#codepress2').codepress({ height:100 });
+  $('textarea#codepress3').codepress({ height:200 });
+ });
+&lt;/script&gt;
+  </pre></code>
+ </li>
+</ul>
+
+<div class="Clear">&nbsp;</div>
+<div class="Clear">&nbsp;</div>
+<h2 class="No">Important pointers...</h2>
+<ul type="1">
+ <li>
+  <s>This is a working idea that hasn't yet been fully tested</s>.
+  <br/>
+  <span class="Yes">Tested and works on Firefox 2, IE7 and IE6</span> (all in WinXP SP2).
+  <br/>
+  Codepress is not supported on Opera/Safari (or is it?), but form submission still works.
+ </li>
+ <li>
+  The same principle can be applied to TinyMCE, <a href="../FCKEditor/">FCKEditor</a> and any other rich-text editors.
+  <br/>
+  Any input regarding other rich-text editors is welcome.
+ </li>
+ <li>
+  The plugin will intercept known methods and install itself against related plugins
+  (currently only the <a href="http://www.malsup.com/jquery/form/">jQuery Form Plugin</a>).
+  <br/>
+  Any input regarding integrating this plugin with other jQuery plugins is welcome.
+ </li>
+</ul>
+
+<div class="Clear">&nbsp;</div>
+			
+		<div class="Clear" style="margin:10px 0px; padding:3px 0px 7px 0px; background:#090; color:#fff; text-align:center;">
+		 <div class="Small" style="background:#090; color:#fff; padding:0 0 3px 0">
+			 To <span class="B">Support this project</span> just checkout a related website:
+			</div>
+		 <!--//
+			<a target="_blank" href="http://www.digixmas.com/?id=3313"><img src="http://www.digixmas.com/images/digi-banner-1.gif" alt="digiXMAS Directory Submitter"></a>
+			//-->
+			<script type="text/javascript">
+			google_ad_client = "pub-9465008056978568";
+			google_ad_width = 728;
+			google_ad_height = 90;
+			google_ad_format = "728x90_as";
+			google_ad_type = "text_image";
+			//2007-07-12: Fyneworks, jQuery, Banner
+			google_ad_channel = "0644126694+6785406728+8192505316";
+			</script>
+			<script type="text/javascript"
+					src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+		</div>
+
+
+  </td>
+  <td valign="top" width="170" align="right">
+
+<div class="Clear">&nbsp;</div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-9465008056978568";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_type = "text_image";
+//2007-07-12: Fyneworks, jQuery, Banner
+google_ad_channel = "0644126694+6785406728+8192505316";
+//-->
+</script>
+<script type="text/javascript"
+  src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<div class="Clear">&nbsp;</div>
+
+<div class="Clear">&nbsp;</div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-9465008056978568";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_type = "text_image";
+//2007-07-12: Fyneworks, jQuery, Banner
+google_ad_channel = "0644126694+6785406728+8192505316";
+//-->
+</script>
+<script type="text/javascript"
+  src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<div class="Clear">&nbsp;</div>
+
+  </td>
+ </tr>
+</table>
+
+  </td>
+ </tr>
+</table>
+
+  <div align="center" style="background:#f7f7f7; border-top:#e0e0e0 solid 1px; padding:20px;">
+   <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img alt="Creative Commons License" style="border-width:0" src="http://creativecommons.org/images/public/somerights20.png"/></a><br/><span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" property="dc:title" rel="dc:type">jQuery Codepress Plugin</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.fyneworks.com/" property="cc:attributionName" rel="cc:attributionURL">Fyneworks.com</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/uk/">Creative Commons Attribution-Share Alike 2.0 UK: England & Wales License</a>.
+  </div>
+  
+		
+		<!--//
+<script src='http://toolbar.wibiya.com/toolbarLoader.php?toolbarId=2147&nc=0&pl=1' type='text/javascript'></script>
+//-->
+  <!--//
+  Wibiya clashes with jQuery so I found these articles:
+  http://getsatisfaction.com/wibiya/topics/jquery_1_3_conflict
+  http://getsatisfaction.com/wibiya/topics/wibiya_not_playing_nice_with_frontpage_slideshow_using_mootools
+  //-->
+  
+  <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script><noscript>Google Analytics Script</noscript>
+  <script type="text/javascript">try{_uacct = "UA-1942730-1";urchinTracker(); }catch(e){}</script><noscript>Google Analytics</noscript>
+ </body>
+</html>
