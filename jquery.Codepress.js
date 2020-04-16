@@ -1,10 +1,10 @@
 /*
  ### jQuery Codepress Plugin v1.2 - 2008-04-17
-	### * http://www.fyneworks.com/ - diego@fyneworks.com
+	### * https://www.fyneworks.com/ - diego@fyneworks.com
  Licensed under a Creative Commons Attribution-Share Alike 2.0 UK: England & Wales License
 	###
- Official Project: http://jquery.com/plugins/project/Codepress/
- Official Website: http://www.fyneworks.com/jquery/Codepress/
+ Project: https://github.com/fyneworks/codepress
+ Website: https://codepress.fyneworks.com/
 */
 // 25-Jul-2007 - v1.0 - it begins...
 // 12-Jan-2008 - v1.1 - plugin now follows the jquery philosophy of $(selector).plugin();
